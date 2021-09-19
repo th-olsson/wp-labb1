@@ -1,5 +1,14 @@
 <?php
 
+// Theme supports
+function tholsson_theme_support()
+{
+    // Support for featured image
+    add_theme_support('post-thumbnails');
+}
+
+add_action('after_setup_theme', 'tholsson_theme_support');
+
 // Enqueue styles
 function tholsson_register_styles()
 {
