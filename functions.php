@@ -7,6 +7,19 @@ function tholsson_theme_support()
     add_theme_support('post-thumbnails');
 }
 
+
+// Menus
+function tholsson_menus()
+{
+    $locations = array(
+        'nav' => "Top Navigation Bar",
+        'subpages' => 'Subpages Menu',
+        'sidebar' => 'Sidebar Menu'
+    );
+
+    register_nav_menus($locations);
+}
+add_action('init', 'tholsson_menus');
 add_action('after_setup_theme', 'tholsson_theme_support');
 
 // Enqueue styles
