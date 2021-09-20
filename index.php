@@ -35,7 +35,7 @@
 
 				</div>
 
-				<?php get_sidebar(''); ?>
+				<?php dynamic_sidebar('sidebar-menu') ?>
 
 			</div>
 		</div>

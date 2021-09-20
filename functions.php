@@ -22,6 +22,25 @@ function tholsson_menus()
 add_action('init', 'tholsson_menus');
 add_action('after_setup_theme', 'tholsson_theme_support');
 
+// Register sidebars
+function tholsson_register_sidebars()
+{
+    // Footer
+    register_sidebars(3, array('name' => 'Footer %d', 'before_widget' => '', 'after_widget' => ''));
+    // Sidebar
+    register_sidebar(
+        array(
+            'name' => 'Sidebar Menu',
+            'id' => 'sidebar-menu',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_sidebar' => '<aside id="secondary" class="col-xs-12 col-md-3"><div id="sidebar">',
+            'after_sidebar' => '</div></aside>'
+        )
+    );
+}
+add_action('widgets_init', 'tholsson_register_sidebars');
+
 // Enqueue styles
 function tholsson_register_styles()
 {
